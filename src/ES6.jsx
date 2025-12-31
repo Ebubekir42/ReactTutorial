@@ -1,22 +1,22 @@
 // ES6 - Class
 
-class Car{
-    constructor(name){
+class Car {
+    constructor(name) {
         this.brand = name;
     }
 
-    present(){
+    present() {
         return `I have a ${this.brand}`;
     }
 }
 
-class Model extends Car{
-    constructor(name, mod){
+class Model extends Car {
+    constructor(name, mod) {
         super(name);
         this.model = mod;
     }
 
-    show(){
+    show() {
         return `${this.present()}, it is a ${this.model}`;
     }
 }
@@ -32,11 +32,11 @@ const hello2 = () => "Hello World";
 const hello3 = val => `Hello ${val}`;
 const hello4 = (val1, val2) => `Hello ${val1}, ${val2}`;
 
-class Header{
-    constructor(){
+class Header {
+    constructor() {
         this.color = "red";
     }
-    changeColor = function(){
+    changeColor = function () {
         document.getElementById("root").innerHTML += this;
     }
 
@@ -53,7 +53,7 @@ document.getElementById("btn").addEventListener("click", myHeader.changeColor); 
 document.getElementById("btn").addEventListener("click", myHeader.changeColor2); // object Object
 
 // ES6 - Variables
-for(let i = 0; i < 3; i++){
+for (let i = 0; i < 3; i++) {
     var val;
     let val2;
     const val5 = "text";
@@ -64,3 +64,7 @@ val = "text";
 var val3 = "text";
 let val4 = "text";
 const val6 = "text";
+
+// ES6 - Array map()
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(x => x * 2);
