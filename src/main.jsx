@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -48,12 +48,32 @@ const MyList2 = () => (
   </ul>
 )
 
+// ES6 - Destructing
+// using destructing
+const Greeting = ({ name, age }) => <h1>Hello, {name}! You are {age} years old.</h1>;
+// not using destructing
+const Greeting2 = (props) => <h1>Hello, {props.name}! You are {props.age} years old.</h1>;
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  )
+}
+
 
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
   // <UserList />
-  <MyList2/>
+  // <MyList2/>
+  <>
+    <Greeting name={"John"} age={25} />
+    <Greeting2 name={"John"} age={30} />
+    <Counter />
+  </>
   // <p>Welcome!</p>
   // <StrictMode>
   //   <App />

@@ -68,3 +68,40 @@ const val6 = "text";
 // ES6 - Array map()
 const numbers = [1, 2, 3, 4];
 const doubled = numbers.map(x => x * 2);
+
+// ES6 - Destructing
+const vehicles = ['mustang', 'f-150', 'expedition'];
+// old way
+const car = vehicles[0];
+const truck = vehicles[1];
+const suv = vehicles[2];
+// new way
+const [car2, truck2, suv2] = vehicles;
+const [car3, , suv3] = vehicles;
+
+const dateInfo = (dat) => {
+    const d = dat.getDate();
+    const m = dat.getMonth() + 1;
+    const y = dat.getFullYear();
+
+    return [d, m, y];
+};
+const [date, month, year] = dateInfo(new Date());
+
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50
+};
+let { firstName, country = "Norway" } = person;
+
+const person2 = {
+    firstName2: "John",
+    lastName2: "Doe",
+    age2: 50,
+    car: {
+        brand: 'Ford',
+        model: 'Mustang',
+    }
+}
+let { firstName2, car: { brand } } = person2;
