@@ -51,3 +51,16 @@ window.addEventListener("load", myHeader.changeColor2); // object Object
 
 document.getElementById("btn").addEventListener("click", myHeader.changeColor); // object HTMLButtonElement
 document.getElementById("btn").addEventListener("click", myHeader.changeColor2); // object Object
+
+// ES6 - Variables
+for(let i = 0; i < 3; i++){
+    var val;
+    let val2;
+    const val5 = "text";
+    val3 = "text3";
+    val4 = "text4";
+}
+val = "text";
+var val3 = "text";
+let val4 = "text";
+const val6 = "text";
