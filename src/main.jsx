@@ -7,6 +7,7 @@ import { name2, age2 } from "./person.jsx";
 import message from './message.jsx';
 import Car from './Car.jsx';
 import Parent from './Parent.jsx';
+import Goal from './Goal.jsx';
 
 
 const myelement = (
@@ -142,7 +143,8 @@ createRoot(document.getElementById('root')).render(
   // <p>Welcome!</p>
   // <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
   // <Parent />
-  <button onClick={event => shoot("Goal!", event)}>Take the shoot!</button>
+  // <button onClick={event => shoot("Goal!", event)}>Take the shoot!</button>
+  <Goal isGoal={true} type="football" />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
