@@ -118,6 +118,9 @@ const myelement2 = <h1>Hello {/* fruitList.join(", ")*/}</h1>;
 // };
 
 const kwtohp = (kw) => kw * 1.36;
+let x = "Ford"
+let y = { name: "Ford", model: "Mustang" };
+let z = [1964, 1965, 1966];
 
 createRoot(document.getElementById('root')).render(
   // myelement
@@ -131,7 +134,7 @@ createRoot(document.getElementById('root')).render(
   //   {message()}
   // </>
   // <p>Welcome!</p>
-  <Car color="red" />
+  <Car color="red" brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
   // <StrictMode>
   //   <App />
   // </StrictMode>,

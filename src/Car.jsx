@@ -1,6 +1,11 @@
 const Car = (props) => {
     return (
-        <h2>Hi, I am a {props.color} Car!</h2>
+        <>
+            <h2>I am a {props.color} {props.brand} {props.model}!</h2>
+            <h2>The car is from {props.year}!</h2>
+            <h2>My favorite car is a {props.carinfo.name} {props.carinfo.model}!</h2>
+            <p>But it has to from {props.years[0]}, {props.years[1]}, or {props.years[2]}.</p>
+        </>
     )
 }
 
@@ -14,4 +19,4 @@ const Garage = () => {
     )
 }
 
-export default Garage;
+export default Car;
