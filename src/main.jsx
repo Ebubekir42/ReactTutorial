@@ -77,13 +77,25 @@ const myelement2 = <h1>Hello {/* fruitList.join(", ")*/}</h1>;
 const Car = () => {
   const brand = "Ford";
   const model = "Mustang";
+  const hp = 218 * 1.36;
+  const myobj = {
+    name: "Fiat",
+    model: "500",
+    color: "white"
+  };
   return (
     <>
       <h2>My Car</h2>
       <p>It is a {brand} {model}</p>
+      <p>It has {218 * 1.36} horsepower</p>
+      <p>It has {hp} horsepower</p>
+      <p>It has {kwtohp(218)} horsepower</p>
+      <p>My car is a {myobj.color} {myobj.name} {myobj.model}</p>
     </>
   );
 };
+
+const kwtohp = (kw) => kw * 1.36;
 
 createRoot(document.getElementById('root')).render(
   // myelement
