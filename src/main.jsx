@@ -134,7 +134,7 @@ createRoot(document.getElementById('root')).render(
   //   {message()}
   // </>
   // <p>Welcome!</p>
-  <Car color="red" brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
+  <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
