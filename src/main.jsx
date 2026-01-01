@@ -123,6 +123,11 @@ let x = "Ford"
 let y = { name: "Ford", model: "Mustang" };
 let z = [1964, 1965, 1966];
 
+const shoot = (a, b) => {
+  alert(a);
+  alert(b.type);
+}
+
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
@@ -136,7 +141,8 @@ createRoot(document.getElementById('root')).render(
   // </>
   // <p>Welcome!</p>
   // <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
-  <Parent />
+  // <Parent />
+  <button onClick={event => shoot("Goal!", event)}>Take the shoot!</button>
   // <StrictMode>
   //   <App />
   // </StrictMode>,
