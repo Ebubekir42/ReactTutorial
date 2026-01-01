@@ -105,3 +105,22 @@ const person2 = {
     }
 }
 let { firstName2, car: { brand } } = person2;
+
+// ES6 - Spread Operator
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+const [one, two, ...rest] = numbersCombined;
+
+const car4 = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
+}
+
+const car_more = {
+    type: 'car',
+    year: 2021,
+    color: 'yellow'
+}
+const mycar2 = { ...car4, ...car_more };
