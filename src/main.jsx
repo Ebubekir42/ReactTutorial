@@ -90,6 +90,11 @@ const Car = () => {
     backgroundColor: "#ddd"
   };
   // camelCase Event Attributes
+  // React supports if statements, but not inside JSX.
+  let y = 15;
+  let color = "Gray";
+  if (y < 10)
+    color = "White";
   return (
     <>
       <h2 onClick={() => { alert("Hello World") }} className={`myClass ${x}`}>My Car</h2>
@@ -105,6 +110,8 @@ const Car = () => {
       {/* Style Attributes camelCase */}
       <p style={{ color: "red", fontSize: "20px", backgroundColor: "lightgrey" }}>Stil 1</p>
       <p style={myStyle}>Stil 2</p>
+      <p>{color}</p>
+      <p>{y < 10 ? "Gray" : "White"}</p>
     </>
   );
 };
