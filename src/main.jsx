@@ -8,6 +8,7 @@ import message from './message.jsx';
 import Car from './Car.jsx';
 import Parent from './Parent.jsx';
 import Goal from './Goal.jsx';
+import MyCar from './MyCar.jsx';
 
 
 const myelement = (
@@ -144,7 +145,8 @@ createRoot(document.getElementById('root')).render(
   // <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
   // <Parent />
   // <button onClick={event => shoot("Goal!", event)}>Take the shoot!</button>
-  <Goal isGoal={true} type="football" />
+  // <Goal isGoal={true} type="football" />
+  <MyCar />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
