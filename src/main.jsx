@@ -5,6 +5,7 @@ import App from './App.jsx'
 // import {name, age} from "./person.jsx"
 import { name2, age2 } from "./person.jsx";
 import message from './message.jsx';
+import Car from './Car.jsx';
 
 
 const myelement = (
@@ -74,47 +75,47 @@ Commands
 const myelement2 = <h1>Hello {/* fruitList.join(", ")*/}</h1>;
 
 // Component
-const Car = () => {
-  const brand = "Ford";
-  const model = "Mustang";
-  const hp = 218 * 1.36;
-  const myobj = {
-    name: "Fiat",
-    model: "500",
-    color: "white"
-  };
-  const x = "myClass2";
-  const myStyle = {
-    color: "red",
-    fontSize: "20px",
-    backgroundColor: "#ddd"
-  };
-  // camelCase Event Attributes
-  // React supports if statements, but not inside JSX.
-  let y = 15;
-  let color = "Gray";
-  if (y < 10)
-    color = "White";
-  return (
-    <>
-      <h2 onClick={() => { alert("Hello World") }} className={`myClass ${x}`}>My Car</h2>
-      <p>It is a {brand} {model}</p>
-      <p>It has {218 * 1.36} horsepower</p>
-      <p>It has {hp} horsepower</p>
-      <p>It has {kwtohp(218)} horsepower</p>
-      <p>My car is a {myobj.color} {myobj.name} {myobj.model}</p>
-      {/* Boolen Attributes */}
-      <button onClick={() => { alert("Hello World") }} disabled>Click Me</button>
-      <button onClick={() => { alert("Hello World") }} disabled={true}>Click Me</button>
-      <button onClick={() => { alert("Hello World") }} disabled={false}>Click Me</button>
-      {/* Style Attributes camelCase */}
-      <p style={{ color: "red", fontSize: "20px", backgroundColor: "lightgrey" }}>Stil 1</p>
-      <p style={myStyle}>Stil 2</p>
-      <p>{color}</p>
-      <p>{y < 10 ? "Gray" : "White"}</p>
-    </>
-  );
-};
+// const Car = () => {
+//   const brand = "Ford";
+//   const model = "Mustang";
+//   const hp = 218 * 1.36;
+//   const myobj = {
+//     name: "Fiat",
+//     model: "500",
+//     color: "white"
+//   };
+//   const x = "myClass2";
+//   const myStyle = {
+//     color: "red",
+//     fontSize: "20px",
+//     backgroundColor: "#ddd"
+//   };
+//   // camelCase Event Attributes
+//   // React supports if statements, but not inside JSX.
+//   let y = 15;
+//   let color = "Gray";
+//   if (y < 10)
+//     color = "White";
+//   return (
+//     <>
+//       <h2 onClick={() => { alert("Hello World") }} className={`myClass ${x}`}>My Car</h2>
+//       <p>It is a {brand} {model}</p>
+//       <p>It has {218 * 1.36} horsepower</p>
+//       <p>It has {hp} horsepower</p>
+//       <p>It has {kwtohp(218)} horsepower</p>
+//       <p>My car is a {myobj.color} {myobj.name} {myobj.model}</p>
+//       {/* Boolen Attributes */}
+//       <button onClick={() => { alert("Hello World") }} disabled>Click Me</button>
+//       <button onClick={() => { alert("Hello World") }} disabled={true}>Click Me</button>
+//       <button onClick={() => { alert("Hello World") }} disabled={false}>Click Me</button>
+//       {/* Style Attributes camelCase */}
+//       <p style={{ color: "red", fontSize: "20px", backgroundColor: "lightgrey" }}>Stil 1</p>
+//       <p style={myStyle}>Stil 2</p>
+//       <p>{color}</p>
+//       <p>{y < 10 ? "Gray" : "White"}</p>
+//     </>
+//   );
+// };
 
 const kwtohp = (kw) => kw * 1.36;
 
@@ -130,7 +131,7 @@ createRoot(document.getElementById('root')).render(
   //   {message()}
   // </>
   // <p>Welcome!</p>
-  <Car />
+  <Car color="red" />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
