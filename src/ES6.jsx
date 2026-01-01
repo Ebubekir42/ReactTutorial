@@ -127,3 +127,32 @@ const mycar2 = { ...car4, ...car_more };
 
 // ES6 - Ternary Operator
 const message = authenticated => authenticated ? "App" : "Login";
+
+// ES6 - Template Strings
+const name3 = "John";
+const age = 30;
+const message2 = `Hello, ${name3}!
+You are ${age} years old.`;
+
+const items = ["apple", "banana", "orange"];
+const list = `You have ${items.length}: ${items.map(item => item).join(',')}`;
+const isAdmin = true;
+const message3 = `Status: ${isAdmin ? 'Admin' : 'User'}`;
+
+const highlight = (strings, fname) => {
+    let x = fname.toUpperCase();
+    return strings[0] + x + strings[1];
+}
+let name4 = "John";
+let text2 = highlight`Hello ${name4}, how are you?`
+
+// const highlight3 = (strings, ...fnames) => {  // No error
+// }
+const highlight2 = (strings, fname1, fname2) => {
+    const st = "";
+    let x = fname1.toUpperCase();
+    let y = fname2.toUpperCase();
+    return strings[0] + x + strings[1] + y + strings[2];
+}
+let name5 = "Jane";
+text2 = highlight2`Hello ${name4} and ${name5}, how are you?`;
