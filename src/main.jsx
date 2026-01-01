@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 // import {name, age} from "./person.jsx"
-import {name2, age2} from "./person.jsx";
+import { name2, age2 } from "./person.jsx";
 import message from './message.jsx';
 
 
@@ -67,19 +67,37 @@ const Counter = () => {
   )
 }
 
+// Command
+/*
+Commands
+*/
+const myelement2 = <h1>Hello {/* fruitList.join(", ")*/}</h1>;
+
+// Component
+const Car = () => {
+  const brand = "Ford";
+  const model = "Mustang";
+  return (
+    <>
+      <h2>My Car</h2>
+      <p>It is a {brand} {model}</p>
+    </>
+  );
+};
 
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
   // <UserList />
   // <MyList2/>
-  <>
-    <Greeting name={"John"} age={25} />
-    <Greeting2 name={"John"} age={30} />
-    <Counter />
-    {message()}
-  </>
+  // <>
+  //   <Greeting name={"John"} age={25} />
+  //   <Greeting2 name={"John"} age={30} />
+  //   <Counter />
+  //   {message()}
+  // </>
   // <p>Welcome!</p>
+  <Car />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
