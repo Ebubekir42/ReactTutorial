@@ -124,3 +124,6 @@ const car_more = {
     color: 'yellow'
 }
 const mycar2 = { ...car4, ...car_more };
+
+// ES6 - Ternary Operator
+const message = authenticated => authenticated ? "App" : "Login";
