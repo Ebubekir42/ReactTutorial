@@ -4,9 +4,13 @@ const MyForm = () => {
     const [name, setName] = useState("John");
     const [mytxt, setMytxt] = useState("Text");
     const [myCar, setMyCar] = useState("Volvo");
+    const [inputs, setInputs] = useState({});
 
     const handleChange = (e) => {
-        setName(e.target.value);
+        // setName(e.target.value);
+        const name = e.target.name;
+        const value = e.target.value;
+        setInputs(pre => ({ ...pre, [name]: value }));
     }
 
     const handleChange2 = (e) => {
@@ -18,12 +22,12 @@ const MyForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(name);
+        console.log(inputs);
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Enter your name:
+            {/* <label>Enter your name:
                 <input type="text" value={name} onChange={handleChange} />
             </label>
             <p>Current value: {name}</p>
@@ -33,7 +37,14 @@ const MyForm = () => {
                 <option value="Ford">Ford</option>
                 <option value="Volvo">Volvo</option>
                 <option value="Fiat">Fiat</option>
-            </select>
+            </select> */}
+            <label>First name:
+                <input type="text" name="firstname" value={inputs.firstname || ""} onChange={handleChange} />
+            </label>
+            <label>Last name:
+                <input type="text" name="lastname" value={inputs.lastname || ""} onChange={handleChange} />
+            </label>
+            <p>Current value: {inputs.firstname} - {inputs.lastname}</p>
             <input type="submit" />
         </form>
     );
