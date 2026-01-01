@@ -6,6 +6,7 @@ import App from './App.jsx'
 import { name2, age2 } from "./person.jsx";
 import message from './message.jsx';
 import Car from './Car.jsx';
+import Parent from './Parent.jsx';
 
 
 const myelement = (
@@ -134,7 +135,8 @@ createRoot(document.getElementById('root')).render(
   //   {message()}
   // </>
   // <p>Welcome!</p>
-  <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
+  // <Car brand={x} model="Mustang" year={1969} years={z} carinfo={y} />
+  <Parent />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
