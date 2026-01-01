@@ -83,14 +83,28 @@ const Car = () => {
     model: "500",
     color: "white"
   };
+  const x = "myClass2";
+  const myStyle = {
+    color: "red",
+    fontSize: "20px",
+    backgroundColor: "#ddd"
+  };
+  // camelCase Event Attributes
   return (
     <>
-      <h2>My Car</h2>
+      <h2 onClick={() => { alert("Hello World") }} className={`myClass ${x}`}>My Car</h2>
       <p>It is a {brand} {model}</p>
       <p>It has {218 * 1.36} horsepower</p>
       <p>It has {hp} horsepower</p>
       <p>It has {kwtohp(218)} horsepower</p>
       <p>My car is a {myobj.color} {myobj.name} {myobj.model}</p>
+      {/* Boolen Attributes */}
+      <button onClick={() => { alert("Hello World") }} disabled>Click Me</button>
+      <button onClick={() => { alert("Hello World") }} disabled={true}>Click Me</button>
+      <button onClick={() => { alert("Hello World") }} disabled={false}>Click Me</button>
+      {/* Style Attributes camelCase */}
+      <p style={{ color: "red", fontSize: "20px", backgroundColor: "lightgrey" }}>Stil 1</p>
+      <p style={myStyle}>Stil 2</p>
     </>
   );
 };
