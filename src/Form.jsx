@@ -7,12 +7,20 @@ const MyForm = () => {
         setName(e.target.value);
     }
 
+    console.log("test");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(name);
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Enter your name:
                 <input type="text" value={name} onChange={handleChange} />
             </label>
             <p>Current value: {name}</p>
+            <input type="submit" />
         </form>
     );
 };
