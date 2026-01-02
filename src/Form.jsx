@@ -8,8 +8,9 @@ const MyForm = () => {
 
     const handleChange = (e) => {
         // setName(e.target.value);
-        const name = e.target.name;
-        const value = e.target.value;
+        const target = e.target;
+        const name = target.name;
+        const value = target.type === "checkbox" ? target.checked : target.value;
         setInputs(pre => ({ ...pre, [name]: value }));
     }
 
@@ -22,7 +23,14 @@ const MyForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let fillings = "";
+        if (inputs.tomato) fillings += "tomato";
+        if (inputs.onion) {
+            if (inputs.tomato) fillings += " and ";
+            fillings += "onion";
+        }
         console.log(inputs);
+        console.log(`${inputs.firstname} wants a burger with ${fillings}`);
     }
 
     return (
@@ -45,6 +53,15 @@ const MyForm = () => {
                 <input type="text" name="lastname" value={inputs.lastname || ""} onChange={handleChange} />
             </label>
             <p>Current value: {inputs.firstname} - {inputs.lastname}</p>
+            <p>I want a burger with:</p>
+            <label>
+                Tomato:
+                <input type="checkbox" name="tomato" checked={inputs.tomato || false} onChange={handleChange} />
+            </label>
+            <label>
+                Onion:
+                <input type="checkbox" name="onion" checked={inputs.onion || false} onChange={handleChange} />
+            </label>
             <input type="submit" />
         </form>
     );
