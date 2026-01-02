@@ -31,6 +31,7 @@ const MyForm = () => {
         }
         console.log(inputs);
         console.log(`${inputs.firstname} wants a burger with ${fillings}`);
+        console.log(`Your favorite fruit is: ${inputs.fruit}`);
     }
 
     return (
@@ -61,6 +62,19 @@ const MyForm = () => {
             <label>
                 Onion:
                 <input type="checkbox" name="onion" checked={inputs.onion || false} onChange={handleChange} />
+            </label>
+            <p>Select your favorite fruit:</p>
+            <label>
+                <input type="radio" name="fruit" value="apple" checked={inputs.fruit === "apple"} onChange={handleChange} />
+                Apple
+            </label>
+            <label>
+                <input type="radio" name="fruit" value="banana" checked={inputs.fruit === "banana"} onChange={handleChange} />
+                Banana
+            </label>
+            <label>
+                <input type="radio" name="fruit" value="cherry" checked={inputs.fruit === "cherry"} onChange={handleChange} />
+                Cherry
             </label>
             <input type="submit" />
         </form>
