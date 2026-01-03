@@ -10,6 +10,8 @@ import Parent from './Parent.jsx';
 import Goal from './Goal.jsx';
 import MyCar from './MyCar.jsx';
 import MyForm from './Form.jsx';
+import MyApp from './Modal.jsx';
+import App2 from './PortalButton.jsx';
 
 
 const myelement = (
@@ -148,7 +150,9 @@ createRoot(document.getElementById('root')).render(
   // <button onClick={event => shoot("Goal!", event)}>Take the shoot!</button>
   // <Goal isGoal={true} type="football" />
   // <MyCar />
-  <MyForm />
+  // <MyForm />
+  // <MyApp />
+  <App2 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
