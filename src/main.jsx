@@ -18,6 +18,7 @@ import { BrowserRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useParam
 import FavoriteColor from './FavoriteColor.jsx';
 import Timer from './Timer.jsx';
 import Component1 from './UserContext.jsx';
+import App5 from './UseRef.jsx';
 
 
 const myelement = (
@@ -299,7 +300,8 @@ createRoot(document.getElementById('root')).render(
   // </>
   // <FavoriteColor />
   // <Timer />
-  <Component1 />
+  // <Component1 />
+  <App5 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
