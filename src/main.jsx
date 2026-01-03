@@ -13,6 +13,7 @@ import MyForm from './Form.jsx';
 import MyApp from './Modal.jsx';
 import App2 from './PortalButton.jsx';
 import App3 from './Fruit.jsx';
+import { PrimaryButton, SuccessButton, GlobalStyle, Button } from './Button.jsx';
 
 
 const myelement = (
@@ -154,9 +155,22 @@ createRoot(document.getElementById('root')).render(
   // <MyForm />
   // <MyApp />
   // <App2 />
+  // <>
+  //   <App3 />
+  //   <div className='primary'>Div Elements</div>
+  // </>
+  // <>
+  //   <Button btntype="primary">Primary Button</Button>
+  //   <Button btntype="secondary">Secondary Button</Button>
+  // </>
   <>
-    <App3 />
-    <div className='primary'>Div Elements</div>
+    <Button $btntype="primary">Primary Button</Button>
+    <Button $btntype="secondary">Secondary Button</Button>
+    <PrimaryButton>Primary Button</PrimaryButton>
+    <SuccessButton>Success Button</SuccessButton>
+    <GlobalStyle />
+    <h1>Welcome!</h1>
+    <p className='myparagraph'>This paragraph is styled with global styles.</p>
   </>
   // <StrictMode>
   //   <App />
