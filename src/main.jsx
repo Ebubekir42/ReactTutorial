@@ -209,6 +209,17 @@ const App4 = () => {
   );
 }
 
+const withBorder = (WrappedComponent) => {
+  return (props) => (
+    <div style={{ border: "2px solid blue", padding: "10px" }}>
+      <WrappedComponent {...props} />
+    </div>
+  );
+}
+
+const Greeting3 = ({ name }) => <h1>Hello, {name}</h1>;
+const GreetingWithBorder = withBorder(Greeting3);
+
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
@@ -273,7 +284,11 @@ createRoot(document.getElementById('root')).render(
   //     <Route path='/customer' element={<Navigate to={"/customer/Emil"} />} />
   //   </Routes>
   // </BrowserRouter>
-  <App4 />
+  // <App4 />
+  <>
+    <Greeting3 name={"John"} />
+    <GreetingWithBorder name={"Jane"} />
+  </>
   // <StrictMode>
   //   <App />
   // </StrictMode>,
