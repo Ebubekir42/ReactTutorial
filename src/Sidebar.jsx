@@ -6,7 +6,7 @@ const Sidebar = () => {
             padding: '20px',
             borderRadius: '8px'
         }}>
-            <h2>Categories</h2>
+            <h2 className="myHeader">Categories</h2>
             <ul style={{
                 listStyle: 'none',
                 padding: 0,
