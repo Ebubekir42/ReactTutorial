@@ -19,6 +19,7 @@ import FavoriteColor from './FavoriteColor.jsx';
 import Timer from './Timer.jsx';
 import Component1 from './UserContext.jsx';
 import App5 from './UseRef.jsx';
+import Score from './Score.jsx';
 
 
 const myelement = (
@@ -301,7 +302,8 @@ createRoot(document.getElementById('root')).render(
   // <FavoriteColor />
   // <Timer />
   // <Component1 />
-  <App5 />
+  // <App5 />
+  <Score />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
