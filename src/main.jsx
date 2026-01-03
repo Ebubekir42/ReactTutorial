@@ -14,6 +14,7 @@ import MyApp from './Modal.jsx';
 import App2 from './PortalButton.jsx';
 import App3 from './Fruit.jsx';
 import { PrimaryButton, SuccessButton, GlobalStyle, Button } from './Button.jsx';
+import { BrowserRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useParams } from 'react-router-dom';
 
 
 const myelement = (
@@ -135,6 +136,61 @@ const shoot = (a, b) => {
   alert(b.type);
 }
 
+const Home = () => <h1>Home Page</h1>;
+const About = () => <h1>About Page</h1>;
+const Contact = () => <h1>Contact Page</h1>;
+
+const Products = () => {
+  return (
+    <div>
+      <h1>Products Page</h1>
+      <nav style={{ marginBottom: '20px' }}>
+        <Link to="/products/car">Cars</Link> |{" "}
+        <Link to="/products/bike">Bikes</Link>
+      </nav>
+      <Outlet />
+    </div>
+  );
+}
+
+const CarProducts = () => {
+  return (
+    <div>
+      <h2>Cars</h2>
+      <ul>
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>Volvo</li>
+      </ul>
+    </div>
+  );
+}
+
+const BikeProducts = () => {
+  return (
+    <div>
+      <h2>Bikes</h2>
+      <ul>
+        <li>Yamaha</li>
+        <li>Suzuki</li>
+        <li>Honda</li>
+      </ul>
+    </div>
+  );
+}
+
+const navLinkStyles = ({ isActive }) => ({
+  color: isActive ? "#007bff" : "#333",
+  textDecoration: isActive ? "none" : "underline",
+  fontWeight: isActive ? "bold" : "normal",
+  padding: "5px 10px"
+});
+
+const Info = () => {
+  const { firstname } = useParams();
+  return <h1>Hello, {firstname}!</h1>;
+}
+
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
@@ -163,15 +219,42 @@ createRoot(document.getElementById('root')).render(
   //   <Button btntype="primary">Primary Button</Button>
   //   <Button btntype="secondary">Secondary Button</Button>
   // </>
-  <>
-    <Button $btntype="primary">Primary Button</Button>
-    <Button $btntype="secondary">Secondary Button</Button>
-    <PrimaryButton>Primary Button</PrimaryButton>
-    <SuccessButton>Success Button</SuccessButton>
-    <GlobalStyle />
-    <h1>Welcome!</h1>
-    <p className='myparagraph'>This paragraph is styled with global styles.</p>
-  </>
+  // <>
+  //   <Button $btntype="primary">Primary Button</Button>
+  //   <Button $btntype="secondary">Secondary Button</Button>
+  //   <PrimaryButton>Primary Button</PrimaryButton>
+  //   <SuccessButton>Success Button</SuccessButton>
+  //   <GlobalStyle />
+  //   <h1>Welcome!</h1>
+  //   <p className='myparagraph'>This paragraph is styled with global styles.</p>
+  // </>
+  <BrowserRouter>
+    <nav>
+      {/* <Link to="/">Home</Link> |{" "}
+      <Link to="/about">About</Link> |{" "}
+      <Link to="/products">Products</Link> |{" "}
+      <Link to="/contact">Contact</Link> */}
+      <NavLink style={navLinkStyles} to="/">Home</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/about">About</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/products">Products</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/customer/Emil">Emil</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/customer/Tobias">Tobias</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/customer/Linus">Linus</NavLink> |{" "}
+      <NavLink style={navLinkStyles} to="/contact">Contact</NavLink>
+    </nav>
+
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/products' element={<Products />}>
+        <Route path='car' element={<CarProducts />} />
+        <Route path='bike' element={<BikeProducts />} />
+      </Route>
+      <Route path='/contact' element={<Contact />} />
+      <Route path='/customer/:firstname' element={<Info />} />
+      <Route path='/customer' element={<Navigate to={"/customer/Emil"} />} />
+    </Routes>
+  </BrowserRouter>
   // <StrictMode>
   //   <App />
   // </StrictMode>,
