@@ -1,4 +1,4 @@
-import { StrictMode, useState } from 'react'
+import { forwardRef, StrictMode, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -191,6 +191,24 @@ const Info = () => {
   return <h1>Hello, {firstname}!</h1>;
 }
 
+const MyInput = forwardRef((props, ref) => (
+  <input ref={ref} {...props} />
+));
+
+const App4 = () => {
+  const inputRef = useRef();
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <MyInput ref={inputRef} placeholder="Type here..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
 createRoot(document.getElementById('root')).render(
   // myelement
   // <MyList />
@@ -228,33 +246,34 @@ createRoot(document.getElementById('root')).render(
   //   <h1>Welcome!</h1>
   //   <p className='myparagraph'>This paragraph is styled with global styles.</p>
   // </>
-  <BrowserRouter>
-    <nav>
-      {/* <Link to="/">Home</Link> |{" "}
-      <Link to="/about">About</Link> |{" "}
-      <Link to="/products">Products</Link> |{" "}
-      <Link to="/contact">Contact</Link> */}
-      <NavLink style={navLinkStyles} to="/">Home</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/about">About</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/products">Products</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/customer/Emil">Emil</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/customer/Tobias">Tobias</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/customer/Linus">Linus</NavLink> |{" "}
-      <NavLink style={navLinkStyles} to="/contact">Contact</NavLink>
-    </nav>
+  // <BrowserRouter>
+  //   <nav>
+  //     {/* <Link to="/">Home</Link> |{" "}
+  //     <Link to="/about">About</Link> |{" "}
+  //     <Link to="/products">Products</Link> |{" "}
+  //     <Link to="/contact">Contact</Link> */}
+  //     <NavLink style={navLinkStyles} to="/">Home</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/about">About</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/products">Products</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/customer/Emil">Emil</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/customer/Tobias">Tobias</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/customer/Linus">Linus</NavLink> |{" "}
+  //     <NavLink style={navLinkStyles} to="/contact">Contact</NavLink>
+  //   </nav>
 
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/products' element={<Products />}>
-        <Route path='car' element={<CarProducts />} />
-        <Route path='bike' element={<BikeProducts />} />
-      </Route>
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/customer/:firstname' element={<Info />} />
-      <Route path='/customer' element={<Navigate to={"/customer/Emil"} />} />
-    </Routes>
-  </BrowserRouter>
+  //   <Routes>
+  //     <Route path='/' element={<Home />} />
+  //     <Route path='/about' element={<About />} />
+  //     <Route path='/products' element={<Products />}>
+  //       <Route path='car' element={<CarProducts />} />
+  //       <Route path='bike' element={<BikeProducts />} />
+  //     </Route>
+  //     <Route path='/contact' element={<Contact />} />
+  //     <Route path='/customer/:firstname' element={<Info />} />
+  //     <Route path='/customer' element={<Navigate to={"/customer/Emil"} />} />
+  //   </Routes>
+  // </BrowserRouter>
+  <App4 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
