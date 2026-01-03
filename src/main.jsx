@@ -16,6 +16,7 @@ import App3 from './Fruit.jsx';
 import { PrimaryButton, SuccessButton, GlobalStyle, Button } from './Button.jsx';
 import { BrowserRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useParams } from 'react-router-dom';
 import FavoriteColor from './FavoriteColor.jsx';
+import Timer from './Timer.jsx';
 
 
 const myelement = (
@@ -295,7 +296,8 @@ createRoot(document.getElementById('root')).render(
   //   <h2>My Header 2</h2>
   //   <h3>My Header 3</h3>
   // </>
-  <FavoriteColor />
+  // <FavoriteColor />
+  <Timer />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
