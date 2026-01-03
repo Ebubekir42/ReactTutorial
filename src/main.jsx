@@ -17,6 +17,7 @@ import { PrimaryButton, SuccessButton, GlobalStyle, Button } from './Button.jsx'
 import { BrowserRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useParams } from 'react-router-dom';
 import FavoriteColor from './FavoriteColor.jsx';
 import Timer from './Timer.jsx';
+import Component1 from './UserContext.jsx';
 
 
 const myelement = (
@@ -297,7 +298,8 @@ createRoot(document.getElementById('root')).render(
   //   <h3>My Header 3</h3>
   // </>
   // <FavoriteColor />
-  <Timer />
+  // <Timer />
+  <Component1 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
