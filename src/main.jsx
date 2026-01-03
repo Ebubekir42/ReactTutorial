@@ -12,6 +12,7 @@ import MyCar from './MyCar.jsx';
 import MyForm from './Form.jsx';
 import MyApp from './Modal.jsx';
 import App2 from './PortalButton.jsx';
+import App3 from './Fruit.jsx';
 
 
 const myelement = (
@@ -152,7 +153,8 @@ createRoot(document.getElementById('root')).render(
   // <MyCar />
   // <MyForm />
   // <MyApp />
-  <App2 />
+  // <App2 />
+  <App3 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
