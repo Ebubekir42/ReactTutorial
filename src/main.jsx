@@ -154,7 +154,10 @@ createRoot(document.getElementById('root')).render(
   // <MyForm />
   // <MyApp />
   // <App2 />
-  <App3 />
+  <>
+    <App3 />
+    <div className='primary'>Div Elements</div>
+  </>
   // <StrictMode>
   //   <App />
   // </StrictMode>,
