@@ -15,6 +15,7 @@ import App2 from './PortalButton.jsx';
 import App3 from './Fruit.jsx';
 import { PrimaryButton, SuccessButton, GlobalStyle, Button } from './Button.jsx';
 import { BrowserRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useParams } from 'react-router-dom';
+import FavoriteColor from './FavoriteColor.jsx';
 
 
 const myelement = (
@@ -289,11 +290,12 @@ createRoot(document.getElementById('root')).render(
   //   <Greeting3 name={"John"} />
   //   <GreetingWithBorder name={"Jane"} />
   // </>
-  <>
-    <MyCar />
-    <h2>My Header 2</h2>
-    <h3>My Header 3</h3>
-  </>
+  // <>
+  //   <MyCar />
+  //   <h2>My Header 2</h2>
+  //   <h3>My Header 3</h3>
+  // </>
+  <FavoriteColor />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
