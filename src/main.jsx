@@ -285,9 +285,14 @@ createRoot(document.getElementById('root')).render(
   //   </Routes>
   // </BrowserRouter>
   // <App4 />
+  // <>
+  //   <Greeting3 name={"John"} />
+  //   <GreetingWithBorder name={"Jane"} />
+  // </>
   <>
-    <Greeting3 name={"John"} />
-    <GreetingWithBorder name={"Jane"} />
+    <MyCar />
+    <h2>My Header 2</h2>
+    <h3>My Header 3</h3>
   </>
   // <StrictMode>
   //   <App />
