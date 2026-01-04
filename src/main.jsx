@@ -21,6 +21,7 @@ import Component1 from './UserContext.jsx';
 import App5 from './UseRef.jsx';
 import Score from './Score.jsx';
 import WithoutCallBackExample from './WithCallBackExample.jsx';
+import App6 from './WithUseMemoExample.jsx';
 
 
 const myelement = (
@@ -305,7 +306,8 @@ createRoot(document.getElementById('root')).render(
   // <Component1 />
   // <App5 />
   // <Score />
-  <WithoutCallBackExample />
+  // <WithoutCallBackExample />
+  <App6 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
