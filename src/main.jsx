@@ -20,6 +20,7 @@ import Timer from './Timer.jsx';
 import Component1 from './UserContext.jsx';
 import App5 from './UseRef.jsx';
 import Score from './Score.jsx';
+import WithoutCallBackExample from './WithCallBackExample.jsx';
 
 
 const myelement = (
@@ -303,7 +304,8 @@ createRoot(document.getElementById('root')).render(
   // <Timer />
   // <Component1 />
   // <App5 />
-  <Score />
+  // <Score />
+  <WithoutCallBackExample />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
