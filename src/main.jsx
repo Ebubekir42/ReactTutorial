@@ -22,6 +22,7 @@ import App5 from './UseRef.jsx';
 import Score from './Score.jsx';
 import WithoutCallBackExample from './WithCallBackExample.jsx';
 import App6 from './WithUseMemoExample.jsx';
+import Home2 from "./CustomHook.jsx";
 
 
 const myelement = (
@@ -307,7 +308,8 @@ createRoot(document.getElementById('root')).render(
   // <App5 />
   // <Score />
   // <WithoutCallBackExample />
-  <App6 />
+  // <App6 />
+  <Home2 />
   // <StrictMode>
   //   <App />
   // </StrictMode>,
